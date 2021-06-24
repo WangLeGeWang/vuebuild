@@ -31,6 +31,16 @@ let config = {
 			return args
 		})
 	},
+	css: {
+		loaderOptions: {
+			less: {
+				lessOptions: {
+					modifyVars: {},
+					javascriptEnabled: true
+				}
+			}
+		}
+	},
 	publicPath: './',
 	productionSourceMap: false,
 	transpileDependencies: []
