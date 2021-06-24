@@ -1,0 +1,13 @@
+root = true
+
+[*.{js,jsx,json,vue,htm,html,css,sass,less,conf}]
+charset = utf-8
+indent_style = tab
+indent_size = 4
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+[*.md]
+trim_trailing_whitespace = true

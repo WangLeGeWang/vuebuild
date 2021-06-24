@@ -1,20 +1,38 @@
 <!DOCTYPE html>
+<!--Build: <%= VUE_APP_BUILD_TIME %>-->
+<!--Version: <%= VUE_APP_VERSION %>-->
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <title>codesandbox</title>
-  </head>
-  <body>
-    <noscript>
-      <strong
-        >We're sorry but codesandbox doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      >
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+	<link rel="stylesheet" href="./loading.css" />
+	<title>
+		<%= VUE_APP_TITLE %>
+	</title>
+</head>
+
+<body>
+	<div id="app">
+		<div class="loader">
+			<div class="l_main">
+				<div class="l_square">
+					<span></span><span></span><span></span>
+				</div>
+				<div class="l_square">
+					<span></span><span></span><span></span>
+				</div>
+				<div class="l_square">
+					<span></span><span></span><span></span>
+				</div>
+				<div class="l_square">
+					<span></span><span></span><span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
