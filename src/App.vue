@@ -1,17 +1,31 @@
-<template>
-	<div id="app">
-		<img alt="Vue logo" src="./assets/logo.png" width="25%" />
-		<HelloWorld msg="Hello Vue in CodeSandbox!" />
-	</div>
-</template>
-
 <script>
-import HelloWorld from "@/components/HelloWorld.vue"
-
 export default {
     name: "App",
-    components: {
-        HelloWorld
+    data () {
+        return {
+            isRouterAlive: true
+        }
+    },
+    provide () {
+        return {
+            reload: this.reload
+        }
+    },
+    methods: {
+        reload () {
+            this.isRouterAlive = false
+            this.$nextTick(function () {
+                console.log('reload')
+                this.isRouterAlive = true
+            })
+        }
+    },
+    render () {
+        return (
+            <div id="app">
+                {this.isRouterAlive && <router-view />}
+            </div>
+        )
     }
 }
 </script>
