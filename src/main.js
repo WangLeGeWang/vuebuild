@@ -1,12 +1,17 @@
 import Vue from "vue"
 import App from "./App.vue"
 import router from '@/router'
+import store from '@/store'
+// import createEventBus from './eventbus'
 
-import "./assets/common.less"
+import "@/assets/common.less"
 
 Vue.config.productionTip = false
 
+// createEventBus()
+
 new Vue({
 	router,
+	store,
 	render: h => h(App)
 }).$mount("#app")

@@ -30,6 +30,10 @@ let config = {
 			}
 			return args
 		})
+		config.module.rule('worker').test(/\.worker\.(c|m)?js$/i).use('worker-loader').loader('worker-loader').tap(options => ({
+			worker: 'SharedWorker',
+			filename: '/workers/[contenthash:8].worker.js'
+		})).end()
 	},
 	css: {
 		loaderOptions: {
@@ -39,8 +43,10 @@ let config = {
 					javascriptEnabled: true
 				}
 			}
-		}
+		},
+		requireModuleExtension: true
 	},
+	parallel: false,
 	publicPath: './',
 	productionSourceMap: false,
 	transpileDependencies: []

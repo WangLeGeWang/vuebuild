@@ -1,5 +1,5 @@
 <template>
-	<div id="home">
+	<div id="about">
 		<div @click="reload">{{count}}</div>
 		<input v-model.number="message" />
 	</div>
@@ -9,8 +9,7 @@
 import { mapState } from 'vuex'
 
 export default {
-    name: "Home",
-    components: {},
+    name: 'About',
     computed: {
         ...mapState(['count']),
         message: {
@@ -23,19 +22,9 @@ export default {
         }
     },
     inject: ['reload'],
-    methods: {
-        increment () {
-            this.$store.commit('increment')
-            // console.log(this.$store.state.count)
-        }
-    },
     created () {
-        let t = setInterval(() => {
-            this.increment()
-        }, 2 * 1000)
         this.$once('hook:beforeDestroy', () => {
             console.log('hook:beforeDestroy')
-            clearInterval(t)
         })
     }
 }
